@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Find | Lost & Found Portal</title>
+    <meta
+      name="description"
+      content="Campus Find is a lost and found portal for students to report and recover misplaced belongings on campus."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">C</span>
+          <span>Campus Find</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#discover">Discover</a>
+          <a href="#report">Report Item</a>
+          <a href="#how-it-works">How it Works</a>
+        </nav>
+
+        <a href="#report" class="btn btn-primary">Report Lost Item</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Student Safety • Lost Belongings • Campus Community</p>
+            <h1>Lost something on campus? Let’s bring it home.</h1>
+            <p class="subtitle">
+              Report misplaced items or help others recover theirs through a simple
+              and trusted campus lost-and-found system.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#report" class="btn btn-primary">Submit a Report</a>
+              <a href="#discover" class="btn btn-secondary">Browse Items</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat-box">
+                <strong>1,240+</strong>
+                <span>Items returned</span>
+              </div>
+              <div class="stat-box">
+                <strong>92%</strong>
+                <span>Recovered within 24h</span>
+              </div>
+              <div class="stat-box">
+                <strong>24/7</strong>
+                <span>Student access</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="card-top">
+              <span class="tag found">Found</span>
+              <span class="time">Today</span>
+            </div>
+
+            <h3>Blue Water Bottle</h3>
+            <ul>
+              <li>Location: Library 2nd Floor</li>
+              <li>Posted by: Campus Office Desk</li>
+              <li>Contact: desk@campus.edu</li>
+            </ul>
+
+            <div class="mini-meta">
+              <span>📍 Library</span>
+              <span>🧢 Accessories</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="discover" class="discover">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Discover</p>
+            <h2>Recent lost and found listings</h2>
+          </div>
+
+          <div class="toolbar">
+            <div class="search-wrap">
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Search for item, location, or category"
+                aria-label="Search items"
+              />
+            </div>
+
+            <div class="filter-group" aria-label="Filter by type">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="lost">Lost</button>
+              <button class="filter-btn" data-filter="found">Found</button>
+            </div>
+          </div>
+
+          <div id="itemsContainer" class="items-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="report" class="report">
+        <div class="container report-grid">
+          <div class="report-copy">
+            <p class="eyebrow">Report item</p>
+            <h2>Help the campus community recover what was lost.</h2>
+            <p>
+              Whether you misplaced something or found an item, submit a report in
+              seconds and let others know where it was last seen.
+            </p>
+
+            <ul class="check-list">
+              <li>Quick campus-wide visibility</li>
+              <li>Easy contact details and item descriptions</li>
+              <li>Safe and simple recovery process</li>
+            </ul>
+          </div>
+
+          <form id="reportForm" class="report-form">
+            <div class="field-row">
+              <label>
+                <span>Type</span>
+                <select id="type" required>
+                  <option value="lost">Lost Item</option>
+                  <option value="found">Found Item</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Category</span>
+                <select id="category" required>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Accessories">Accessories</option>
+                  <option value="Books">Books</option>
+                  <option value="Clothing">Clothing</option>
+                  <option value="Documents">Documents</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span>Item name</span>
+              <input type="text" id="itemName" placeholder="e.g. Black backpack" required />
+            </label>
+
+            <label>
+              <span>Location</span>
+              <input type="text" id="location" placeholder="e.g. Engineering Hall" required />
+            </label>
+
+            <div class="field-row">
+              <label>
+                <span>Date</span>
+                <input type="date" id="date" required />
+              </label>
+
+              <label>
+                <span>Contact</span>
+                <input type="text" id="contact" placeholder="Phone or email" required />
+              </label>
+            </div>
+
+            <label>
+              <span>Description</span>
+              <textarea
+                id="description"
+                rows="4"
+                placeholder="Add details such as color, brand, last seen time, or distinctive features"
+                required
+              ></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Submit report
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="steps">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2>Three simple steps to reconnect lost items</h2>
+          </div>
+
+          <div class="step-grid">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <h3>Report</h3>
+              <p>Post details about the item you lost or the item you found.</p>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <h3>Match</h3>
+              <p>Students browse listings and compare descriptions, locations, and dates.</p>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <h3>Recover</h3>
+              <p>Contact the owner or finder using the information provided on the posting.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Campus Find. Built for students, by students.</p>
+        <a href="#report">Report an item</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
